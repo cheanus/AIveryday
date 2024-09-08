@@ -1,0 +1,49 @@
+power: True  # 是否暂时开启/关闭AIveryday
+
+openai:
+  remote:  # 远程API配置
+    base_url: "https://api.openai.com/v1"
+    model: "gpt-3.5-turbo"
+    api_key: "sk-**"
+  local:  # 本地API配置
+    min_memory: 3.e+9  # 本地大模型的最小内存要求
+    is_GPU: False  # 本地大模型是否使用GPU加速
+    base_url: "http://localhost:11434/v1"
+    model: "qwen2:7b-instruct-q3_K_M"
+    api_key: "ollama"
+
+ActivityWatch:  ## 配置ActivityWatch
+  host: "http://localhost:5600"
+  window_bucket: "aw-watcher-window_cheanus-archlinux"
+  afk_bucket: "aw-watcher-afk_cheanus-archlinux"
+  num_top: 5  # 每个top app/title/cat的数量
+
+prompts:
+  ## 用于通知的prompt
+  notify:  |
+    假设你是大学生A的一位幽默风趣、体贴关照的女朋友，在过去的 {scope_hour:.1f} 小时中，
+    ## A最常使用的应用是：
+    {top_app}
+    ## A最常浏览的内容是：
+    {top_title}
+    ## A最常活动的类型是：
+    {top_cat}
+    ## A的在线活跃时长是：{duration_min:.1f} min
+    当前时刻为{datetime}，现在你作为女友了解了以上信息，想和A简短地吐槽你的想法，你的第一句话是：
+
+time:
+  scope: 3600  # 每个prompt所查询的过去事件的时间范围
+  min_duration_alive: 600  # 在scope时间内为触发prompt，用户所需最小活跃时间
+  min_time_event: 60  # 低于此时间的事件不会被记录
+  delta:  # 相邻prompt的时间间隔
+    mean: 3600  # 期望值
+    std: 600  # 标准差
+    min: 600  # 最小值
+    max: 7200  # 最大值
+
+notify:
+  platform: "linux"  # 操作系统平台
+  app_name: "AIveryday"  # 通知应用名称
+  title: "叮~"  # 通知标题
+  expire_time: 5  # 通知过期时间
+  icon_path: "/home/test/Codes/AIveryday/assets/icon.png"  # 通知图标路径

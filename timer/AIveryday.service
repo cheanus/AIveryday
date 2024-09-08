@@ -1,0 +1,11 @@
+[Unit]
+Description=AI everyday
+After=network.target
+
+[Service]
+ExecStart=[VirtualPath]/python startAD.py
+WorkingDirectory=[WorkingDirectory]
+Restart=always
+
+[Install]
+WantedBy=default.target
