@@ -59,9 +59,13 @@ cp example.config.yaml config.yaml
 其他配置项可以根据自己的需求进行调整。
 
 ### 运行
-在确保ActivityWatch服务正常运行的情况下，运行AIveryday：
+在确保ActivityWatch服务正常运行的情况下，运行`startAD.py`，AIveryday将会每隔一段时间运行1次：
 ```bash
 python startAD.py
+```
+或者，你也可以暂时先尝试1次AIveryday的运行效果：
+```bash
+python startAD.py --test
 ```
 
 ### 开机自启

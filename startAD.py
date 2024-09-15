@@ -3,6 +3,7 @@ import time
 import yaml
 import random
 import logging
+import argparse
 from GPT import Chat
 from utils import notify
 from ActivityWatcher import ActivityWatcher
@@ -60,4 +61,11 @@ if __name__ == '__main__':
         handlers=[logging.StreamHandler(sys.stdout)]
     )
 
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--test', action='store_true', default=False, help='尝试一次请求')
+    args = parser.parse_args()
+
+    if args.test:
+        request()
+    else:
+        main()
