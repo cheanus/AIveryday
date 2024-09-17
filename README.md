@@ -29,6 +29,7 @@ pip install plyer
 
 另外，你还需要安装ActivityWatch，具体安装方法请参考[ActivityWatch](https://github.com/ActivityWatch/activitywatch)。注意以下几点：
 - 如果你是Linux Wayland用户，需要使用[awatcher](https://github.com/2e3s/awatcher)
+- 如果你想用ActivityWatch跟踪网页记录并据此分类活动，[官方文档](https://github.com/ActivityWatch/aw-watcher-web)会建议使用[aw-watcher-web](https://github.com/ActivityWatch/aw-watcher-web)，但实测有些问题，建议使用浏览器拓展*URL in title*以在浏览器窗口标题上添加网页地址
 - 尽可能完善你的ActivityWatch设置，特别是**类别规则**的设置
 - 请尽可能确保ActivityWatch的类别和你所使用的LLMs的**语言**一致，以便AIveryday能够更好地读懂你的桌面活动
 
