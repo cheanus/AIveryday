@@ -67,6 +67,7 @@ python startAD.py
 ```bash
 python startAD.py --test
 ```
+注：为了让弹窗消息消失后能够保存在通知历史中，某些Linux用户可能需要单独设置。例如KDE用户需要在`设置-通知-应用程序设置-其他应用`中勾选“在通知历史中显示”。
 
 ### 开机自启
 **Linux**
