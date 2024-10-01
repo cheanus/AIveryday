@@ -31,7 +31,7 @@ prompts:
     ## A的在线活跃时长是：{duration_min:.1f} min
     当前时刻为{datetime}，现在你作为女友了解了以上信息，想和A简短地吐槽你的想法，你的第一句话是：
 
-time:  # 单位为分钟
+time:  # 单位为秒
   scope: 3600  # 每个prompt所查询的过去事件的时间范围
   min_duration_alive: 600  # 在scope时间内为触发prompt，用户所需最小活跃时间
   min_time_event: 60  # 低于此时间的事件不会被记录
