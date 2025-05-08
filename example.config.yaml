@@ -17,6 +17,8 @@ ActivityWatch:  ## 配置ActivityWatch
   window_bucket: "aw-watcher-window_cheanus-archlinux"
   afk_bucket: "aw-watcher-afk_cheanus-archlinux"
   num_top: 5  # 每个top app/title/cat的数量
+  # 不向AIveryday发送的标题，正则匹配
+  exclude_title: []
 
 prompts:
   ## 用于通知的prompt
