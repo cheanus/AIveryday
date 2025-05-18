@@ -105,8 +105,8 @@ class ActivityWatcher:
         for item in events_datas[event_type + "_events"]:
             # 过滤掉需排除的事件标题
             if event_type == "title" and any(
-                re.search(pattern, item["data"]["title"])
-                for pattern in self.args["ActivityWatch"]["exclude_title"]
+                re.search(pattern, f"{item["data"]["app"]} | {item["data"]["title"]}", re.I)
+                for pattern in self.args["ActivityWatch"]["exclude"]
             ):
                 continue
             if item["duration"] > self.args["time"]["min_time_event"]:

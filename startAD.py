@@ -16,6 +16,7 @@ def request():
         aw = ActivityWatcher(args)
         chat = Chat(aw, args)
         prompt = chat.prompt(args['time']['scope'])
+        logging.info(f"当前活动: {prompt}")
         if prompt:
             # 避免各种网络错误
             try:
